@@ -13,7 +13,11 @@ $(document).ready(function(){
         let query = $("input:text").val();
         let key = "qIp4FtndglssrZT2Ce1cBIL2GhyWt38q";
         let limit = 9;
-        let xhr = $.get(`${url}${query}${"&api_key="}${key}${"&limit="}${limit}`);
+                //using strings and concatenation
+        //let xhr = $.get("http://api.giphy.com/v1/gifs/search?q=birds&api_key=qIp4FtndglssrZT2Ce1cBIL2GhyWt38q&limit=6");
+
+                //using template strings
+        let xhr = $.get(`${url}${query}&api_key=${key}&limit=${limit}`);
         
         //Once our request is 'done', we want to make sure we store that date in a parameter called response
 
